@@ -1,0 +1,38 @@
+{
+  "APP_NAME": {
+    "message": "<앱 이름>"
+  },
+  "APP_DESCRIPTION": {
+    "message": "<앱 설명>"
+  },
+  "SETTING": {
+    "message": "설정"
+  },
+  "PRODUCT": {
+    "message": "상품"
+  },
+  "SCORE": {
+    "message": "점수"
+  },
+  "DIFF_PERCENT": {
+    "message": "변동률(%)"
+  },
+  "ADD_CATEGORY": {
+    "message": "추천 카테고리 추가"
+  },
+  "CATEGORY_NAME": {
+    "message": "카테고리명"
+  },
+  "PLACEHOLDER_CATEGORY_NAME": {
+    "message": "현재 시간 가장 많이 팔린 상품"
+  },
+  "API_PATH": {
+    "message": "API PATH"
+  },
+  "ADD": {
+    "message": "추가"
+  },
+  "HELP_TEXT_ADD_CATEGORY": {
+    "message": "특정 Response값을 \r\n 입력하여야합니다."
+  }
+}

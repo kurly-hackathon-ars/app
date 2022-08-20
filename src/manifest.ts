@@ -1,9 +1,10 @@
 import { defineManifest } from '@crxjs/vite-plugin'
 
 export default defineManifest({
-  name: 'create-chrome-ext',
-  description: '',
+  name: "__MSG_APP_NAME__",
+  description: "__MSG_APP_DESCRIPTION__",
   version: '0.0.0',
+  default_locale: "ko",
   manifest_version: 3,
   icons: {
     16: 'img/logo-16.png',
@@ -22,8 +23,10 @@ export default defineManifest({
   },
   content_scripts: [
     {
-      matches: ['http://*/*', 'https://*/*'],
+      run_at: 'document_start',
+      matches: ['https://www.kurly.com/*'],
       js: ['src/content/index.ts'],
+      css: ['node_modules/winbox/dist/css/winbox.min.css.js'],
     },
   ],
   web_accessible_resources: [
