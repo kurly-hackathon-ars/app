@@ -5,10 +5,8 @@ import tailwind from '../styles/tailwind.css?inline'
 
 import { IconCog, IconEdit, IconMinus, IconPlus } from '../content/components/icons/icons'
 import '../content/components/modal/modal'
+import { watch } from '../content/utils/watch'
 
-/**
- * popup
- */
 @customElement('popup-main')
 export class PopupMain extends LitElement {
   static styles = [
@@ -25,8 +23,15 @@ export class PopupMain extends LitElement {
     `,
   ]
 
+  // # Properties
+
   @property({ type: Boolean })
   categoryModalOpen = false
+
+  @property({ type: Boolean })
+  showWindowSearch = false
+
+  // # Event handlers
 
   @eventOptions({})
   onClickDeleteCategory(event: Event): void {
@@ -41,18 +46,35 @@ export class PopupMain extends LitElement {
   }
 
   @eventOptions({})
-  openCategoryModal(): void {
+  onClickOpenCategoryModal(): void {
     this.categoryModalOpen = true
   }
 
   @eventOptions({})
-  closeCategoryModal(): void {
+  onClickCloseCategoryModal(): void {
     this.categoryModalOpen = false
   }
 
   @eventOptions({})
-  addCategory(): void {
-    this.closeCategoryModal()
+  onClickAddCategory(): void {
+    this.onClickCloseCategoryModal()
+  }
+
+  // # Lifecycle methods
+
+  constructor() {
+    super()
+    chrome.storage.local.get([`showWindowSearch`], (result: any) => {
+      const { showWindowSearch } = result
+      this.showWindowSearch = showWindowSearch
+    })
+  }
+
+  // # watch
+
+  @watch('showWindowSearch', { waitUntilFirstUpdate: true })
+  async onWatchShowWindowSearch(): Promise<void> {
+    chrome.storage.local.set({ showWindowSearch: this.showWindowSearch })
   }
 
   render() {
@@ -74,7 +96,14 @@ export class PopupMain extends LitElement {
             <li class="w-full flex">
               <label class="label cursor-pointer">
                 <span class="label-text">검색</span>
-                <input type="checkbox" class="toggle toggle-accent" checked />
+                <input
+                  type="checkbox"
+                  class="toggle toggle-accent"
+                  ?checked=${this.showWindowSearch}
+                  @change=${(event: Event) => {
+                    this.showWindowSearch = (event.target as HTMLInputElement).checked
+                  }}
+                />
               </label>
             </li>
             <li class="w-full flex">
@@ -108,7 +137,7 @@ export class PopupMain extends LitElement {
                   <li>
                     <button
                       class="btn btn-xs btn-circle btn-outline p-0"
-                      @click=${this.openCategoryModal}
+                      @click=${this.onClickOpenCategoryModal}
                     >
                       ${IconPlus}
                     </button>
@@ -181,7 +210,7 @@ export class PopupMain extends LitElement {
           <label
             for="my-modal-3"
             class="btn btn-sm btn-circle absolute right-2 top-2"
-            @click=${this.closeCategoryModal}
+            @click=${this.onClickCloseCategoryModal}
             >✕</label
           >
           <div class="form-control mb-4">
@@ -204,7 +233,7 @@ export class PopupMain extends LitElement {
               />
             </label>
           </div>
-          <div class="modal-action" @click=${this.addCategory}>
+          <div class="modal-action" @click=${this.onClickAddCategory}>
             <label for="my-modal" class="btn btn-primary btn-block"
               >${chrome.i18n.getMessage('ADD')}</label
             >
