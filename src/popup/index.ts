@@ -58,11 +58,12 @@ export class PopupMain extends LitElement {
   render() {
     return html`
       <main data-theme="fantasy" class="bg-transparent">
-        <div class="navbar bg-base-100 shadow-xl rounded-box">
+        <div class="navbar bg-base-100 shadow-xl rounded-box flex item-center justify-between">
           <h1 class="ml-4 normal-case text-xl">
             ${IconCog}
             <span class="ml-2">${chrome.i18n.getMessage('SETTING')}</span>
           </h1>
+          <img width="64" src="src/assets/logo.png" />
         </div>
 
         <div class="navbar bg-base-100 shadow-xl rounded-box mt-4">

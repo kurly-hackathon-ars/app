@@ -1,5 +1,7 @@
 # <앱 이름>
 
+![logo-dog](https://user-images.githubusercontent.com/26294469/185769858-bcb5acf7-38d9-441c-a9a0-3412495a42a6.png)
+
 - <앱 설명>
 
 ## Install
