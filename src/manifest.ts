@@ -1,10 +1,10 @@
 import { defineManifest } from '@crxjs/vite-plugin'
 
-export default defineManifest({
-  name: "__MSG_APP_NAME__",
-  description: "__MSG_APP_DESCRIPTION__",
+export default defineManifest(async (env) => ({
+  name: '__MSG_APP_NAME__',
+  description: '__MSG_APP_DESCRIPTION__',
   version: '0.0.0',
-  default_locale: "ko",
+  default_locale: 'ko',
   manifest_version: 3,
   icons: {
     16: 'img/logo-16.png',
@@ -34,10 +34,9 @@ export default defineManifest({
   web_accessible_resources: [
     {
       resources: ['img/logo-16.png', 'img/logo-34.png', 'img/logo-48.png', 'img/logo-128.png'],
-      matches: [],
+      matches: ['<all_urls>'],
     },
   ],
-  permissions: [
-    "storage"
-  ],
-})
+  permissions: ['webRequest', 'storage'],
+  host_permissions: ['<all_urls>'],
+}))

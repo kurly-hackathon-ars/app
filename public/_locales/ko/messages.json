@@ -34,5 +34,23 @@
   },
   "HELP_TEXT_ADD_CATEGORY": {
     "message": "특정 Response값을 \r\n 입력하여야합니다."
+  },
+  "VIEW_REAL_TIME_DATA": {
+    "message": "실시간 데이터 조회"
+  },
+  "USER_DATA": {
+    "message": "사용자 데이터"
+  },
+  "USER_ID": {
+    "message": "ID"
+  },
+  "USER_NAME": {
+    "message": "이름"
+  },
+  "USER_GRADE": {
+    "message": "등급"
+  },
+  "REQUIRED_LOGIN": {
+    "message": "로그인이 필요합니다."
   }
 }

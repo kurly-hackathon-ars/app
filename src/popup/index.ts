@@ -29,7 +29,10 @@ export class PopupMain extends LitElement {
   categoryModalOpen = false
 
   @property({ type: Boolean })
-  showWindowSearch = false
+  showUserWindow = true
+
+  @property({ type: Boolean })
+  showRecentProductWindow = true
 
   // # Event handlers
 
@@ -64,17 +67,24 @@ export class PopupMain extends LitElement {
 
   constructor() {
     super()
-    chrome.storage.local.get([`showWindowSearch`], (result: any) => {
-      const { showWindowSearch } = result
-      this.showWindowSearch = showWindowSearch
+
+    chrome.storage.local.get([`showUserWindow`, `showRecentProductWindow`], (result: any) => {
+      const { showUserWindow, showRecentProductWindow } = result
+      this.showUserWindow = showUserWindow
+      this.showRecentProductWindow = showRecentProductWindow
     })
   }
 
   // # watch
 
-  @watch('showWindowSearch', { waitUntilFirstUpdate: true })
-  async onWatchShowWindowSearch(): Promise<void> {
-    chrome.storage.local.set({ showWindowSearch: this.showWindowSearch })
+  @watch('showUserWindow', { waitUntilFirstUpdate: true })
+  async onWatchshowUserWindow(): Promise<void> {
+    chrome.storage.local.set({ showUserWindow: this.showUserWindow })
+  }
+
+  @watch('showRecentProductWindow', { waitUntilFirstUpdate: true })
+  async onWatchshowRecentProductWindow(): Promise<void> {
+    chrome.storage.local.set({ showRecentProductWindow: this.showRecentProductWindow })
   }
 
   render() {
@@ -85,23 +95,23 @@ export class PopupMain extends LitElement {
             ${IconCog}
             <span class="ml-2">${chrome.i18n.getMessage('SETTING')}</span>
           </h1>
-          <img width="64" src="src/assets/logo.png" />
+          <img width="64" src="img/logo-128.png" />
         </div>
 
         <div class="navbar bg-base-100 shadow-xl rounded-box mt-4">
           <ul class="menu menu-compact bg-base-100 w-full p-2 rounded-box">
             <li class="menu-title w-full">
-              <span>실시간 데이터 조회</span>
+              <span>${chrome.i18n.getMessage('VIEW_REAL_TIME_DATA')}</span>
             </li>
             <li class="w-full flex">
               <label class="label cursor-pointer">
-                <span class="label-text">검색</span>
+                <span class="label-text">${chrome.i18n.getMessage('USER_DATA')}</span>
                 <input
                   type="checkbox"
                   class="toggle toggle-accent"
-                  ?checked=${this.showWindowSearch}
+                  ?checked=${this.showUserWindow}
                   @change=${(event: Event) => {
-                    this.showWindowSearch = (event.target as HTMLInputElement).checked
+                    this.showUserWindow = (event.target as HTMLInputElement).checked
                   }}
                 />
               </label>
@@ -109,7 +119,14 @@ export class PopupMain extends LitElement {
             <li class="w-full flex">
               <label class="label cursor-pointer">
                 <span class="label-text">최근 본 상품</span>
-                <input type="checkbox" class="toggle toggle-accent" checked />
+                <input
+                  type="checkbox"
+                  class="toggle toggle-accent"
+                  ?checked=${this.showRecentProductWindow}
+                  @change=${(event: Event) => {
+                    this.showRecentProductWindow = (event.target as HTMLInputElement).checked
+                  }}
+                />
               </label>
             </li>
             <li class="w-full flex">
