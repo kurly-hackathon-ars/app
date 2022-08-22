@@ -25,8 +25,10 @@ export default defineManifest({
     {
       run_at: 'document_start',
       matches: ['https://www.kurly.com/*'],
-      js: ['src/content/index.ts'],
-      css: ['node_modules/winbox/dist/css/winbox.min.css.js'],
+      js: [
+        ...(env.mode === 'development' ? [] : ['public/js/webcomponent.js']),
+        'src/content/index.ts',
+      ],
     },
   ],
   web_accessible_resources: [

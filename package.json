@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "fmt": "prettier --write '**/*.{ts,json,css,scss,md}'"
   },
   "dependencies": {
