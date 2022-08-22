@@ -1,0 +1,786 @@
+[
+  {
+    "no": 1000023072,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/e8c16f08-be37-4ca5-b0b6-f77417bc1fc1.jpg",
+    "name": "[선물세트][전통주] 내국양조 송이주 능이주(13도 375ml*2)",
+    "origin_price": 30000,
+    "sale_price": 29000,
+    "category": "전통주"
+  },
+  {
+    "no": 1000023084,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/a63c92bd-f5cc-437d-bf00-f19830257e86.jpg",
+    "name": "[선물세트][전통주] 배혜정도가 로아 화이트(19도 375ml*2)",
+    "origin_price": 30000,
+    "sale_price": 29000,
+    "category": "전통주"
+  },
+  {
+    "no": 1000023100,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/4969eaca-6b3d-410a-b42d-f58cb552e4a2.jpg",
+    "name": "[선물세트][전통주] 우희열명인 한산소곡주 어주(18도 700ml)",
+    "origin_price": 41000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000023106,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/550fb45b-b17e-4cee-b5b4-b2fa74b19be8.jpg",
+    "name": "[선물세트][전통주] 중원당 충주 청명주 백도자기(17도 500ml)",
+    "origin_price": 42000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000023109,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/d01d3285-da04-4c52-a1b7-bdc6491b849c.jpg",
+    "name": "[선물세트][전통주] 전주이강주 주병세트(25도 500ml)",
+    "origin_price": 62000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000023115,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/beb40339-3db3-4079-8f27-3b77655ed444.jpg",
+    "name": "[선물세트][전통주] 안동소주일품 골드세트(21도+40도 500ml)",
+    "origin_price": 60000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000023118,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/f94c45bb-4ac1-47d5-a583-2e8df3238861.jpg",
+    "name": "[선물세트][전통주] 문배술25 헤리티지세트(25도 375ml*2)",
+    "origin_price": 30500,
+    "sale_price": 29500,
+    "category": "전통주"
+  },
+  {
+    "no": 1000023126,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/fc3a0876-76ec-4615-81b8-bac4cc9706b4.jpg",
+    "name": "[선물세트][전통주] 문배술 용상도자기(40도 700ml)",
+    "origin_price": 38000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000023129,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/c90f7c6e-8ee5-4dd7-b32c-8a434bd1ce12.jpg",
+    "name": "[선물세트][전통주] 려 특 1호세트((려25도*려고구마2도*잔 2개))",
+    "origin_price": 54450,
+    "sale_price": 49000,
+    "category": "전통주"
+  },
+  {
+    "no": 1000023132,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/39a422fc-e4c2-4356-ac83-6b43b59246bb.jpg",
+    "name": "[선물세트][전통주] 대대로영농 진도 홍주(40도 500ml)",
+    "origin_price": 36000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000023135,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/2eb50b26-1791-4554-a31c-a498f89d7383.jpg",
+    "name": "[선물세트][전통주] 차례주 그리움(1병 14도 (700ml))",
+    "origin_price": 20000,
+    "sale_price": 19000,
+    "category": "전통주"
+  },
+  {
+    "no": 1000023138,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/ba9f793c-66a7-4658-bd9e-1f6d1745f7f4.jpg",
+    "name": "[선물세트][전통주] 명작 복분자((13도 375mlX3병 / 잔2개)",
+    "origin_price": 25000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000023370,
+    "img_url": "https://3p-image.kurly.com/product-image/546b466a-018d-46a2-9f7f-6814af156774/fbb19520-abab-41de-ade2-c2f44c69becd.jpg",
+    "name": "[선물세트][전통주] 홍시과실주(12도700ml 2병(잔2EA포함))",
+    "origin_price": 44000,
+    "sale_price": 39600,
+    "category": "전통주"
+  },
+  {
+    "no": 1000012901,
+    "img_url": "https://3p-image.kurly.com/product-image/ff51c73d-ad70-486d-90be-4bd1a61c6a7f/1bfcd1e1-7d60-4d2b-9519-2c5bcfe66239.jpg",
+    "name": "[전통주] 복순도가 빨간쌀막걸리(1병(6.5도))",
+    "origin_price": 13200,
+    "sale_price": 12000,
+    "category": "전통주"
+  },
+  {
+    "no": 1000007124,
+    "img_url": "https://3p-image.kurly.com/product-image/546b466a-018d-46a2-9f7f-6814af156774/d3b3b60d-ef76-44e1-8bc4-55041b078eef.jpg",
+    "name": "[전통주] 마크홀리 오리지널 6.0(6도650ml)",
+    "origin_price": 7800,
+    "sale_price": 7600,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009740,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/0d4f09b1-f356-4b66-b225-346c782d2d1e.jpg",
+    "name": "[전통주] DOK 막걸리 (KurlyOnly)(1병 6도 (500ml))",
+    "origin_price": 3300,
+    "sale_price": 2970,
+    "category": "전통주"
+  },
+  {
+    "no": 1000007067,
+    "img_url": "https://3p-image.kurly.com/product-image/546b466a-018d-46a2-9f7f-6814af156774/48385b21-9a84-44ca-92c4-2c89cbc053eb.jpg",
+    "name": "[전통주] 느린마을 막걸리 3입(6도750ml)",
+    "origin_price": 10800,
+    "sale_price": 9700,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009830,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/d01b6a2b-b015-43e2-8931-3c812c1dba51.jpg",
+    "name": "[전통주][대동여주도X산머루영농조합] 머루팩 스위트(12도(1500ml))",
+    "origin_price": 36550,
+    "sale_price": 36550,
+    "category": "전통주"
+  },
+  {
+    "no": 1000012904,
+    "img_url": "https://3p-image.kurly.com/product-image/ff51c73d-ad70-486d-90be-4bd1a61c6a7f/35fba80a-c18a-4766-9f2c-5c6fa98ce157.jpg",
+    "name": "[전통주] 복순도가 손막걸리(1병(6.5도))",
+    "origin_price": 12000,
+    "sale_price": 12000,
+    "category": "전통주"
+  },
+  {
+    "no": 1000007091,
+    "img_url": "https://3p-image.kurly.com/product-image/546b466a-018d-46a2-9f7f-6814af156774/fb495f0c-1ea4-4612-9840-4897a02c659f.jpg",
+    "name": "[전통주] 느린마을막걸리 한번더 3입(12도750ml)",
+    "origin_price": 29700,
+    "sale_price": 28900,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005402,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/5382db29-95f4-454f-bac9-7d4ee3546f55.jpg",
+    "name": "[전통주] 배혜정도가 호랑이 생막걸리 6도 750ml(호랑이 6도)",
+    "origin_price": 3200,
+    "sale_price": 2900,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005369,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/495c9b6d-8ab6-4eab-bd28-5f867085b12f.jpg",
+    "name": "[전통주] 고창 복분자주 선운(선운복분자주 15도)",
+    "origin_price": 7800,
+    "sale_price": 7220,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005366,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/e24bb0d9-81b4-4318-80d0-a200e95e4e10.jpg",
+    "name": "[전통주]  서주 감자술 13도 300ml(감자술 13도)",
+    "origin_price": 4500,
+    "sale_price": 4500,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005417,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/dbcc7c2f-6ce1-41ab-9282-caae93771b35.jpg",
+    "name": "[전통주] 안동소주 일품 3종(안동소주 일품 17도)",
+    "origin_price": 5400,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005414,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/9820da7a-debb-42ae-bce1-af7178bfd76d.jpg",
+    "name": "[전통주] 아이엠더문 오리지널 17도 375ml(아이엠더문 17도)",
+    "origin_price": 26600,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005411,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/544d665a-a880-4f4f-9a8a-8397fe35b8c0.jpg",
+    "name": "[전통주] 시트러스 제주감귤 혼디주 12도 330ml(혼디주 12도)",
+    "origin_price": 9000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005408,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/56803ef2-fd19-43ab-bb2f-83f276584c70.jpg",
+    "name": "[전통주] 서울고량주 레드(서울고량주 레드35도)",
+    "origin_price": 13000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005405,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/27bbff41-59f4-44ba-a687-8c51d0215f27.jpg",
+    "name": "[전통주] 사랑할때 12도 300ml(사랑할때 12도)",
+    "origin_price": 4000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005396,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/df1f8621-40f2-4727-92b0-780c1006bebd.jpg",
+    "name": "[전통주] 박재서명인 안동소주 2종(안동소주22도)",
+    "origin_price": 5500,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005393,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/a0f71c34-69c7-4c35-8515-33441c34dd1d.jpg",
+    "name": "[전통주] 민속주 안동소주 45도(민속주안동소주 40도)",
+    "origin_price": 29000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005390,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/9b2713db-f223-475a-b87e-53beccd25b55.jpg",
+    "name": "[전통주] 문배술 25도 375ml(문배술 25도)",
+    "origin_price": 11000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005387,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/8fb9cb60-b26e-4cdc-8967-b188e1f05b27.jpg",
+    "name": "[전통주] 무주구천동 산머루주(산머루주 16도)",
+    "origin_price": 6000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005384,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/ac138531-bb5b-4047-8884-70987fe82352.jpg",
+    "name": "[전통주] 명품안동소주 프리미엄30 30도 375ml(명품안동소주 30도)",
+    "origin_price": 13000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005381,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/4e30930d-4d81-4b83-9cbe-1bee2aaab702.jpg",
+    "name": "[전통주] 더한 매실원주 13도 375ml(매실원주 13도)",
+    "origin_price": 6200,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005378,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/482d6743-f1dd-42cc-bc54-7696b7a9875b.jpg",
+    "name": "[전통주] 내장산 복분자주 16도 360ml(내장산복분자주 16도)",
+    "origin_price": 7800,
+    "sale_price": 7020,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005375,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/fb2d3c0c-fef4-467a-b379-68e3e69022b5.jpg",
+    "name": "[전통주] 골목막걸리 프리미엄12(골목막걸리 12도)",
+    "origin_price": 8500,
+    "sale_price": 8000,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005372,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/998b59e0-7a94-41f6-8593-1c55818165bd.jpg",
+    "name": "[전통주] 고헌정 동학 1957 특선 13도 375ml(동학 13도)",
+    "origin_price": 3800,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000007064,
+    "img_url": "https://3p-image.kurly.com/product-image/546b466a-018d-46a2-9f7f-6814af156774/008b558f-bebb-4750-a9a3-35262f4ea711.png",
+    "name": "[전통주] 느린마을  소주21(21도375ml)",
+    "origin_price": 9900,
+    "sale_price": 8900,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005462,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/124fb34f-fdf7-471c-81a6-c1e080a80b43.jpg",
+    "name": "[전통주]조은술세종 우도 땅콩 전통주 6도 750ml(우도 땅콩 전통주)",
+    "origin_price": 4000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005459,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/b5d0bb69-6a90-4b56-8aeb-341fbbd58c53.jpg",
+    "name": "[전통주]배혜정도가 우곡생주 생막걸리 10도 750ml(우곡생주 10도)",
+    "origin_price": 6650,
+    "sale_price": 5990,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005456,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/8a6c0488-8052-41d3-8469-b1aa2e0379fb.jpg",
+    "name": "[전통주] 한산소곡주 18도 360ml(한산소곡주 18도)",
+    "origin_price": 9900,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005453,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/b2dd3a57-4dd0-445c-8bfb-b849922602ae.jpg",
+    "name": "[전통주] 한강주조 표문막걸리 6도 500ml(표문막걸리 6도)",
+    "origin_price": 4500,
+    "sale_price": 4200,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005450,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/790ca6df-102a-4c99-ae97-4cfcb098e670.jpg",
+    "name": "[전통주] 한강주조 나루 생 막걸리(나루막걸리 6도)",
+    "origin_price": 7000,
+    "sale_price": 6650,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005447,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/27f92d16-6874-4505-a923-050c673494ea.jpg",
+    "name": "[전통주] 토끼소주 화이트 23도 375ml(토끼소주 화이트 23도)",
+    "origin_price": 24000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005444,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/d33a41e5-8996-446d-9f32-f53eb4c9baea.jpg",
+    "name": "[전통주] 토끼소주 블랙 40도 375ml(토끼소주 블랙 40도)",
+    "origin_price": 39000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005441,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/c7f12b4a-bb21-468b-b083-b8c5db245a23.jpg",
+    "name": "[전통주] 죽향도가 대대포 생 막걸리 6도 (4입)(대대포4입 6도)",
+    "origin_price": 18000,
+    "sale_price": 17100,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005435,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/5fb4d2cd-5462-41f3-886e-e9a4bbcdc147.jpg",
+    "name": "[전통주] 조선3대명주 감홍로 40도 400ml(감홍로 40도)",
+    "origin_price": 50000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005432,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/da6949a7-93dd-4313-a4f8-8b2b807b7e49.jpg",
+    "name": "[전통주] 전주 이강주 19도 375ml(이강주 19도)",
+    "origin_price": 5800,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005429,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/b0ee7561-a4c5-41c5-a1d9-1efc1bd8b3e1.jpg",
+    "name": "[전통주] 영덕주조 도원결의 15도 360ml(도원결의 15도)",
+    "origin_price": 6000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005426,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/fb4dc001-efc8-4c83-a5a4-5ddc542652aa.jpg",
+    "name": "[전통주] 애피소드 상그리아(애피소드 상그리아3.5도)",
+    "origin_price": 3700,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000007106,
+    "img_url": "https://3p-image.kurly.com/product-image/546b466a-018d-46a2-9f7f-6814af156774/fdf468cc-018d-4612-84a9-f39c0a9b19c8.jpg",
+    "name": "[전통주] 댄싱사이더 4종(스윗마마5.5도330ml)",
+    "origin_price": 5900,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000007088,
+    "img_url": "https://3p-image.kurly.com/product-image/546b466a-018d-46a2-9f7f-6814af156774/0c863f77-3d1f-4de7-9e14-4b07660f5301.jpg",
+    "name": "[전통주] 느린마을 증류주(16.9도360ml)",
+    "origin_price": 2780,
+    "sale_price": 2500,
+    "category": "전통주"
+  },
+  {
+    "no": 1000007085,
+    "img_url": "https://3p-image.kurly.com/product-image/546b466a-018d-46a2-9f7f-6814af156774/2a23dda4-f4ca-4092-8ee0-fbf23ac3b834.jpg",
+    "name": "[전통주] 느린마을 옹기막걸리(7도1980ml)",
+    "origin_price": 35000,
+    "sale_price": 31500,
+    "category": "전통주"
+  },
+  {
+    "no": 1000007082,
+    "img_url": "https://3p-image.kurly.com/product-image/546b466a-018d-46a2-9f7f-6814af156774/49ef4e3a-aeb9-41b9-a0a6-0f57ce68fe72.jpg",
+    "name": "[전통주] 느린마을 약주(12도700ml)",
+    "origin_price": 23900,
+    "sale_price": 21500,
+    "category": "전통주"
+  },
+  {
+    "no": 1000007079,
+    "img_url": "https://3p-image.kurly.com/product-image/546b466a-018d-46a2-9f7f-6814af156774/28b192d1-afe7-4594-ac2e-d117921296a7.jpg",
+    "name": "[전통주] 느린마을 소주21 주기세트(21도375mlX2병)",
+    "origin_price": 44000,
+    "sale_price": 39600,
+    "category": "전통주"
+  },
+  {
+    "no": 1000007073,
+    "img_url": "https://3p-image.kurly.com/product-image/546b466a-018d-46a2-9f7f-6814af156774/712ab4f3-31e2-4a98-a09c-08cac8f017ac.jpg",
+    "name": "[전통주] 느린마을 빙주기세트(12도700ml)",
+    "origin_price": 55000,
+    "sale_price": 49500,
+    "category": "전통주"
+  },
+  {
+    "no": 1000007151,
+    "img_url": "https://3p-image.kurly.com/product-image/546b466a-018d-46a2-9f7f-6814af156774/1bcbe6b2-0ebf-4592-82c4-e07b7a6fd765.jpg",
+    "name": "[전통주] 얼떨결에 퍼플 스파클링 막걸리(6도935ml)",
+    "origin_price": 8000,
+    "sale_price": 7600,
+    "category": "전통주"
+  },
+  {
+    "no": 1000007142,
+    "img_url": "https://3p-image.kurly.com/product-image/546b466a-018d-46a2-9f7f-6814af156774/745d9b2d-8590-4b6c-b47a-178c930d5b33.jpg",
+    "name": "[전통주] 심술 3종(7도330ml)",
+    "origin_price": 3000,
+    "sale_price": 2700,
+    "category": "전통주"
+  },
+  {
+    "no": 1000007139,
+    "img_url": "https://3p-image.kurly.com/product-image/546b466a-018d-46a2-9f7f-6814af156774/d45f45a5-f44a-4441-bbbe-f3d03685d496.jpg",
+    "name": "[전통주] 술샘 이화주(8도100ml)",
+    "origin_price": 8000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000007136,
+    "img_url": "https://3p-image.kurly.com/product-image/546b466a-018d-46a2-9f7f-6814af156774/91cfc512-fbc9-4117-a57e-dee7f04ff453.jpg",
+    "name": "[전통주] 산사춘(12도375ml)",
+    "origin_price": 3700,
+    "sale_price": 3500,
+    "category": "전통주"
+  },
+  {
+    "no": 1000007133,
+    "img_url": "https://3p-image.kurly.com/product-image/546b466a-018d-46a2-9f7f-6814af156774/c5927b8f-696b-4c06-99ab-ec35ecf6df16.jpg",
+    "name": "[전통주] 빙탄복(7도370ml)",
+    "origin_price": 4400,
+    "sale_price": 4200,
+    "category": "전통주"
+  },
+  {
+    "no": 1000007121,
+    "img_url": "https://3p-image.kurly.com/product-image/546b466a-018d-46a2-9f7f-6814af156774/f892905a-5d14-41b3-984d-c6052e3c7736.jpg",
+    "name": "[전통주] 동강주조 스파클링 막걸리 얼떨결에(6도935ml)",
+    "origin_price": 7500,
+    "sale_price": 6900,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009749,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/02ceb87e-62a3-4616-a0ca-a4871a6d4ade.jpg",
+    "name": "[전통주] 고창명주 국순당 복분자와인(1병 13도 (750ml))",
+    "origin_price": 22000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009746,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/dfa482e8-9f7f-4787-9a19-0a396fb547e2.jpg",
+    "name": "[전통주] 고소리술(1병 40도 (375ml))",
+    "origin_price": 32000,
+    "sale_price": 30400,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009743,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/466ee7c9-51cd-4b18-a31f-cf1c18699714.jpg",
+    "name": "[전통주] 강산주조 한산소곡주 생주(1병 16도 750ml)",
+    "origin_price": 13000,
+    "sale_price": 11800,
+    "category": "전통주"
+  },
+  {
+    "no": 1000007199,
+    "img_url": "https://3p-image.kurly.com/product-image/546b466a-018d-46a2-9f7f-6814af156774/e5068d6e-559c-4ed7-99d5-e6ea51471c41.jpg",
+    "name": "[전통주] 해창막걸리 2종 (3입)(12도900ml)",
+    "origin_price": 53400,
+    "sale_price": 50700,
+    "category": "전통주"
+  },
+  {
+    "no": 1000007187,
+    "img_url": "https://3p-image.kurly.com/product-image/546b466a-018d-46a2-9f7f-6814af156774/acb9afaf-4a61-48bc-b3aa-849fc4bd02e4.jpg",
+    "name": "[전통주] 팔팔막걸리(6도750ml)",
+    "origin_price": 6000,
+    "sale_price": 5700,
+    "category": "전통주"
+  },
+  {
+    "no": 1000007178,
+    "img_url": "https://3p-image.kurly.com/product-image/546b466a-018d-46a2-9f7f-6814af156774/982f0d36-903d-47ed-9ca4-8c42d476b85d.jpg",
+    "name": "[전통주] 오매락퍽 40도(40도500ml)",
+    "origin_price": 63000,
+    "sale_price": 56700,
+    "category": "전통주"
+  },
+  {
+    "no": 1000007175,
+    "img_url": "https://3p-image.kurly.com/product-image/546b466a-018d-46a2-9f7f-6814af156774/a5547e05-8a74-433f-be12-aaf990840928.jpg",
+    "name": "[전통주] 오매락지관 40도(40도500ml)",
+    "origin_price": 46000,
+    "sale_price": 43700,
+    "category": "전통주"
+  },
+  {
+    "no": 1000007172,
+    "img_url": "https://3p-image.kurly.com/product-image/546b466a-018d-46a2-9f7f-6814af156774/62848332-925b-4b67-9cea-925da45eeef9.jpg",
+    "name": "[전통주] 오매락 25도(25도375ml)",
+    "origin_price": 16000,
+    "sale_price": 14400,
+    "category": "전통주"
+  },
+  {
+    "no": 1000007163,
+    "img_url": "https://3p-image.kurly.com/product-image/546b466a-018d-46a2-9f7f-6814af156774/e8ebfcf5-7e40-4882-aa7e-5d49e6040d3e.jpg",
+    "name": "[전통주] 예산사과와인 추사 3종(화이트와인12도375ml)",
+    "origin_price": 20000,
+    "sale_price": 19000,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009803,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/5e0041df-1a7f-4f13-a0b5-afe3965492c8.jpg",
+    "name": "[전통주] 오메기술(1병 13도 (375ml))",
+    "origin_price": 9000,
+    "sale_price": 8550,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009800,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/5a8cfe74-f285-48e7-bf94-d3447ae8f641.jpg",
+    "name": "[전통주] 스파클링막걸리 시그니쳐(1병 6도 (970ml))",
+    "origin_price": 9900,
+    "sale_price": 8910,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009797,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/e2304e65-5be5-419c-9618-2594917b726b.jpg",
+    "name": "[전통주] 술소리 지리산 강쇠(1병 13도 (375ml))",
+    "origin_price": 2800,
+    "sale_price": 2520,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009788,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/d49c14be-baa2-47c2-9221-216d85d78288.jpg",
+    "name": "[전통주] 술샘 3종(술샘 16(375ml))",
+    "origin_price": 12000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009782,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/86462e7f-188f-47e2-8cd3-28de82084cca.jpg",
+    "name": "[전통주] 서울의 밤 명랑스컬(1병 17도 (375ml))",
+    "origin_price": 5900,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009779,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/9caf37e5-6858-4ba0-b566-eeb2e640b61f.jpg",
+    "name": "[전통주] 서울의 밤(1병 25도 (375ml))",
+    "origin_price": 9200,
+    "sale_price": 7200,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009776,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/98e75767-98b7-4748-afe9-d1eafc1e5c60.jpg",
+    "name": "[전통주] 명작 복분자(1병 13도 (375ml))",
+    "origin_price": 9000,
+    "sale_price": 8550,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009773,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/dd55399d-0fda-488b-849e-54b89b791bd0.jpg",
+    "name": "[전통주] 명가원 솔송주 담솔(1병 40도 (375ml))",
+    "origin_price": 22000,
+    "sale_price": 19800,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009770,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/c68ee807-5ec7-430b-b248-d4beb0d2b9dc.jpg",
+    "name": "[전통주] 려 고구마증류소주 40(1병(375ml))",
+    "origin_price": 42000,
+    "sale_price": 37800,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009767,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/1c7edefa-8cbc-45b3-9242-af466a2c5492.jpg",
+    "name": "[전통주] 려 고구마증류소주 25(1병(375ml))",
+    "origin_price": 23000,
+    "sale_price": 20700,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009758,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/502bda66-c26c-4399-9198-7acaf8600e97.jpg",
+    "name": "[전통주] 니모메(NIMOME)(1병 11도 (375ml))",
+    "origin_price": 9000,
+    "sale_price": 8550,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009755,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/be7c798e-d1c8-4c72-80e0-b6839d282f6d.png",
+    "name": "[전통주] 내변산양조장 오디(참뽕)와인(1병 13도 (750ml))",
+    "origin_price": 18000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009752,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/3766216e-4d89-4708-b837-2d5a25ad3ee0.jpg",
+    "name": "[전통주] 금설 인삼주(1병 35도 (375ml))",
+    "origin_price": 35000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000012907,
+    "img_url": "https://3p-image.kurly.com/product-image/ff51c73d-ad70-486d-90be-4bd1a61c6a7f/1af00786-1af4-4356-859e-679b152d4f20.jpg",
+    "name": "[전통주] 복순도가 탁주(1병(10도))",
+    "origin_price": 24000,
+    "sale_price": 24000,
+    "category": "전통주"
+  },
+  {
+    "no": 1000012895,
+    "img_url": "https://3p-image.kurly.com/product-image/ff51c73d-ad70-486d-90be-4bd1a61c6a7f/b5cc4b5d-e355-49ad-b90b-94a2eb5abbab.jpg",
+    "name": "[전통주] 복순도가 슈퍼드라이(1병(6.5도))",
+    "origin_price": 18000,
+    "sale_price": 18000,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009827,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/0d352707-c315-4ddc-9836-214c1c2b4539.jpeg",
+    "name": "[전통주] 황금보리증류주(1병 17도 (375ml))",
+    "origin_price": 7000,
+    "sale_price": 6650,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009821,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/9ddcc253-5a71-4526-ae90-b2b67ffd4add.jpg",
+    "name": "[전통주] 제주본초 동백꽃제주(1병 16도 (365ml))",
+    "origin_price": 12000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009818,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/3a4e7f4f-8dc3-4ddb-a4b3-56f10658553e.jpg",
+    "name": "[전통주] 장수오미자주(1병 16.5도 (360ml))",
+    "origin_price": 5400,
+    "sale_price": 4860,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009815,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/b8b53c33-9ad3-49fe-9e35-a9dd2ce59e56.jpg",
+    "name": "[전통주] 자연담은 복분자 막걸리(1병 6도 (360ml))",
+    "origin_price": 3400,
+    "sale_price": 3060,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009806,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/448478c8-7609-42e7-b8cf-0933ee728b3c.jpg",
+    "name": "[전통주] 요리용 청주 미청 1.5L(1병 14도 (1500ml))",
+    "origin_price": 7000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000005438,
+    "img_url": "https://3p-image.kurly.com/product-image/1ee6d182-b0b6-401c-b6c8-a396e5530a04/1050caff-3e5c-4021-8b04-845a47834ce9.jpg",
+    "name": "[전통주] 조은술세종 알밤주 6도 750ml(알밤주 6도)",
+    "origin_price": 2000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000007127,
+    "img_url": "https://3p-image.kurly.com/product-image/546b466a-018d-46a2-9f7f-6814af156774/3ab1fcea-8253-4043-b90b-07d0aaf3536c.jpg",
+    "name": "[전통주] 복분자음(12도375ml)",
+    "origin_price": 7500,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000007181,
+    "img_url": "https://3p-image.kurly.com/product-image/546b466a-018d-46a2-9f7f-6814af156774/3f6ef840-bef7-46c9-ae77-96d516fb751d.jpg",
+    "name": "[전통주] 오산양조 하얀까마귀(8도850ml)",
+    "origin_price": 10000,
+    "sale_price": 9000,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009794,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/f407ebd4-11f1-4cc3-a445-c47b88934f6f.jpg",
+    "name": "[전통주] 술샘 퍼플진(1병 36.5도 (500ml))",
+    "origin_price": 43200,
+    "sale_price": 38880,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009824,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/b980e03d-413f-4376-b55e-e2188756da0c.jpg",
+    "name": "[전통주] 조선주조사(1병 14도 (700ml))",
+    "origin_price": 7200,
+    "sale_price": 6480,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009812,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/d1bb1cea-8638-434a-85f7-1c41ed3db5d5.jpg",
+    "name": "[전통주] 원매 프리미엄(1병 20도 (750ml))",
+    "origin_price": 44000,
+    "sale_price": null,
+    "category": "전통주"
+  },
+  {
+    "no": 1000009809,
+    "img_url": "https://3p-image.kurly.com/product-image/cc1ac6f0-81f6-473c-899d-edf544e3ea7a/54484582-cd3c-416f-8743-aa3c467d1df4.jpg",
+    "name": "[전통주] 원매 매실와인(1병 15도 (750ml))",
+    "origin_price": 25000,
+    "sale_price": null,
+    "category": "전통주"
+  }
+]
