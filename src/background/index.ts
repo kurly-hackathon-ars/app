@@ -1,8 +1,11 @@
+const baseURI = 'http://3.34.222.139:8080'
+
 init()
 
 function init(): void {
   addBeforeSendHeadersHandler()
   addMainPageHandler()
+  addProductDetailPageHandler()
 }
 
 function addBeforeSendHeadersHandler(): void {
@@ -39,10 +42,31 @@ function addMainPageHandler(): void {
 
         // TODO: post request to server
         chrome.storage.local.set({ userInfo: resJson.userInfo || null })
+        fetch(`${baseURI}/member`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            member_id: resJson.userInfo.id,
+            name: resJson.userInfo.name,
+            grade: resJson.userInfo.grade,
+          }),
+        })
       })
     },
     { urls: [`https://www.kurly.com/main`, 'https://www.kurly.com/main/beauty'] },
     [`responseHeaders`],
+  )
+}
+
+function addProductDetailPageHandler(): void {
+  chrome.webRequest.onHeadersReceived.addListener(
+    (_details: any) => {
+      console.log(_details)
+    },
+    { urls: [`https://www.kurly.com/goods/*`] },
+    [`responseHeaders`, `extraHeaders`],
   )
 }
 
