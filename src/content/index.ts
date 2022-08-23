@@ -10,6 +10,7 @@ import './components/card-group/card-group'
 import { html, render } from 'lit-html'
 import { equals } from './utils/equal'
 import { sleep } from './utils/sleep'
+import { API } from '../popup'
 
 init()
 
@@ -80,9 +81,11 @@ async function init(): Promise<void> {
       }
     },
   })
+  initCustomWinbox()
 
   addSearchEventHandler()
   addChangedUrlHandler()
+  addReloadEventHandler()
 }
 
 function initWinbox({
@@ -229,6 +232,97 @@ async function addChangedUrlHandler(): Promise<void> {
     const resJson = await response.json()
     chrome.storage.local.set({ recentProduct: resJson })
   }
+}
+
+function initCustomWinbox(): void {
+  chrome.storage.local.get(['showCustomWindows', 'customApis'], (result: any) => {
+    const storageValue: boolean[] = result.showCustomWindows
+    const customApis: API[] = result.customApis
+
+    storageValue.forEach((show, index) => {
+      const table = document.createElement('kurly-table')
+      table.columns = [chrome.i18n.getMessage('PRODUCT'), chrome.i18n.getMessage('SCORE')]
+
+      try {
+        fetch(customApis[index].path)
+          .then((res) => {
+            return res.json()
+          })
+          .then((json) => {
+            table.dataArray = json
+          })
+          .catch(() => {
+            table.dataArray = []
+          })
+      } catch (error) {
+        console.error(error)
+      }
+
+      let winbox: WinBox | null = null
+      if (show === true) {
+        winbox = new WinBox({
+          title: customApis[index].name,
+          index: 5000,
+          background: 'rgb(95, 0, 128)',
+          x: 50,
+          y: 50,
+          width: '320px',
+          height: '120px',
+          mount: table,
+          onclose: () => {
+            storageValue[index] = false
+            chrome.storage.local.set({ showCustomWindows: storageValue })
+            winbox.hide()
+            return true
+          },
+        })
+      }
+
+      chrome.storage.onChanged.addListener((changes: any, area: 'local' | 'sync') => {
+        // if (area === 'local' && 'customApis' in changes) {
+        //   const apis = changes.customApis.newValue
+        //   // table.dataArray = apis
+        //   // winbox && winbox.mount(table)
+        // }
+
+        if (area === 'local' && `showCustomWindows` in changes) {
+          const showCustomWindows = changes.showCustomWindows?.newValue
+          if (showCustomWindows[index] === true) {
+            if (winbox !== null) {
+              winbox.show()
+              return
+            }
+            winbox = new WinBox({
+              title: customApis[index].name,
+              index: 5000,
+              background: 'rgb(95, 0, 128)',
+              x: 50,
+              y: 50,
+              width: '320px',
+              height: '120px',
+              mount: table,
+              onclose: () => {
+                showCustomWindows[index] = false
+                chrome.storage.local.set({ showCustomWindows: showCustomWindows })
+                winbox.hide()
+                return true
+              },
+            })
+            return
+          }
+          winbox?.hide()
+        }
+      })
+    })
+  })
+}
+
+function addReloadEventHandler(): void {
+  chrome.storage.onChanged.addListener((changes: any, area: 'local' | 'sync') => {
+    if (area === 'local' && 'reload' in changes) {
+      location.reload()
+    }
+  })
 }
 
 export {}

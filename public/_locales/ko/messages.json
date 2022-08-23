@@ -6,7 +6,7 @@
     "message": "마켓컬리 실시간 사용자 데이터를 조회하고 추천 API를 바로 추가하여 사용자에게 더 좋은 추천을 할 수 있게 해주는 확장앱입니다."
   },
   "SETTING": {
-    "message": "설정"
+    "message": "컬멍이 설정"
   },
   "PRODUCT": {
     "message": "상품"
@@ -20,8 +20,14 @@
   "ADD_CATEGORY": {
     "message": "API 추가"
   },
-  "CATEGORY_NAME": {
-    "message": "API명"
+  "API_NAME": {
+    "message": "API 이름"
+  },
+  "API_DESCRIPTION": {
+    "message": "API 설명"
+  },
+  "PLACEHOLDER_API_DESCRIPTION": {
+    "message": "API에 대한 설명을 작성하세요."
   },
   "PLACEHOLDER_CATEGORY_NAME": {
     "message": "ex. 검색 추천 API"
@@ -73,5 +79,11 @@
   },
   "HELP_TEXT_SEARCH_API": {
     "message": "마켓컬리 사이트에서 검색시 개별적인 추천 상품을 표시합니다"
+  },
+  "ALREADY_EXISTS_API": {
+    "message": "이미 API가 존재합니다."
+  },
+  "EDIT": {
+    "message": "수정"
   }
 }
