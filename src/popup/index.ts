@@ -45,13 +45,13 @@ export class PopupMain extends LitElement {
   @eventOptions({})
   onClickDeleteCategory(event: Event): void {
     event.stopImmediatePropagation()
-    alert('Delete')
+    // TODO: API 삭제
   }
 
   @eventOptions({})
   onClickEditCategory(event: Event): void {
     event.stopImmediatePropagation()
-    alert('Edit')
+    // TODO: API 수정
   }
 
   @eventOptions({})
@@ -181,16 +181,10 @@ export class PopupMain extends LitElement {
                 />
               </label>
             </li>
-            <li class="w-full flex">
-              <label class="label cursor-pointer">
-                <span class="label-text">구매내역</span>
-                <input type="checkbox" class="toggle toggle-accent" checked />
-              </label>
-            </li>
             <li class="menu-title w-full">
               <span class="flex items-center">
-                <span>추천 카테고리</span>
-                <ul class="menu menu-horizontal">
+                <span>${chrome.i18n.getMessage('RECOMMENDED_API')}</span>
+                <!-- <ul class="menu menu-horizontal">
                   <li>
                     <button
                       class="btn btn-xs btn-circle btn-outline p-0"
@@ -199,11 +193,11 @@ export class PopupMain extends LitElement {
                       ${IconPlus}
                     </button>
                   </li>
-                </ul>
+                </ul> -->
               </span>
             </li>
             <li class="w-full flex">
-              <ul class="text-gray-400 p-0 mt-[-0.25rem]">
+              <!-- <ul class="text-gray-400 p-0 mt-[-0.25rem]">
                 <li class="mb-1">
                   <button
                     class="btn btn-xs btn-circle btn-outline p-0"
@@ -220,10 +214,10 @@ export class PopupMain extends LitElement {
                     ${IconMinus}
                   </button>
                 </li>
-              </ul>
+              </ul> -->
               <label class="label cursor-pointer">
                 <span class="flex items-center">
-                  <span class="label-text">카테고리 A</span>
+                  <span class="label-text">검색 추천 API</span>
                 </span>
                 <span>
                   <input type="checkbox" class="toggle toggle-accent" checked />
@@ -231,7 +225,7 @@ export class PopupMain extends LitElement {
               </label>
             </li>
             <li class="w-full flex">
-              <ul class="text-gray-400 p-0 mt-[-0.25rem]">
+              <!-- <ul class="text-gray-400 p-0 mt-[-0.25rem]">
                 <li class="mb-1">
                   <button
                     class="btn btn-xs btn-circle btn-outline p-0"
@@ -248,10 +242,10 @@ export class PopupMain extends LitElement {
                     ${IconMinus}
                   </button>
                 </li>
-              </ul>
+              </ul> -->
               <label class="label cursor-pointer">
                 <span class="flex items-center">
-                  <span class="label-text">카테고리 B</span>
+                  <span class="label-text">실시간 </span>
                 </span>
                 <span>
                   <input type="checkbox" class="toggle toggle-accent" checked />

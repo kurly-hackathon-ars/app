@@ -128,7 +128,10 @@ function addMainPageHandler(): void {
         })
       })
     },
-    { urls: [`https://www.kurly.com/main`, 'https://www.kurly.com/main/beauty'] },
+    {
+      urls: ['https://www.kurly.com/*'],
+      types: ['main_frame'],
+    },
     [`responseHeaders`],
   )
 }

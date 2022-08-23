@@ -18,13 +18,13 @@
     "message": "변동률(%)"
   },
   "ADD_CATEGORY": {
-    "message": "추천 카테고리 추가"
+    "message": "API 추가"
   },
   "CATEGORY_NAME": {
-    "message": "카테고리명"
+    "message": "API명"
   },
   "PLACEHOLDER_CATEGORY_NAME": {
-    "message": "현재 시간 가장 많이 팔린 상품"
+    "message": "ex. 검색 추천 API"
   },
   "API_PATH": {
     "message": "API PATH"
@@ -64,5 +64,8 @@
   },
   "CART_ITEMS": {
     "message": "장바구니 상품"
+  },
+  "RECOMMENDED_API": {
+    "message": "추천 API 목록"
   }
 }
