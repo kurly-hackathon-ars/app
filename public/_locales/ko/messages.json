@@ -58,5 +58,8 @@
   },
   "RECENT_PRODUCT": {
     "message": "최근 본 상품"
+  },
+  "PICKED_ITEMS": {
+    "message": "찜한 상품"
   }
 }

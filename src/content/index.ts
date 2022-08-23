@@ -9,15 +9,17 @@ import './components/card/card'
 import './components/card-group/card-group'
 import { html, render } from 'lit-html'
 import { equals } from './utils/equal'
+import { sleep } from './utils/sleep'
 
 init()
 
 async function init(): Promise<void> {
   const userInfo = document.createElement('user-info')
   const recentGoodsTable = document.createElement('kurly-table')
-  recentGoodsTable.columns = [chrome.i18n.getMessage('PRODUCT')]
+  const pickedItemsTable = document.createElement('kurly-table')
 
   await chrome.storage.local.remove('recentProduct')
+  await chrome.storage.local.remove('pickedItems')
 
   initWinbox({
     key: 'showUserWindow',
@@ -41,6 +43,22 @@ async function init(): Promise<void> {
         const value = changes.recentProduct.newValue
         recentGoodsTable.dataArray = value
         winbox && winbox.mount(recentGoodsTable)
+      }
+    },
+  })
+  initWinbox({
+    key: 'showPickedItemsWindow',
+    title: chrome.i18n.getMessage('PICKED_ITEMS'),
+    slotElement: pickedItemsTable,
+    x: document.body.scrollWidth - 700,
+    y: 350,
+    width: '640px',
+    height: '300px',
+    callbackChangedStorage: (changes: any, winbox: WinBox) => {
+      if ('pickedItems' in changes) {
+        const value = changes.pickedItems.newValue
+        pickedItemsTable.dataArray = value
+        winbox && winbox.mount(pickedItemsTable)
       }
     },
   })
@@ -153,10 +171,6 @@ function addSearchEventHandler(): void {
       )
     }
   })
-}
-
-async function sleep(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms))
 }
 
 async function addChangedUrlHandler(): Promise<void> {

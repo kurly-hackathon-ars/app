@@ -9,7 +9,7 @@ export class KurlyTable extends LitElement {
   static styles = [unsafeCSS(tailwind)]
 
   @property({ type: Array })
-  columns = [chrome.i18n.getMessage('PRODUCT'), chrome.i18n.getMessage('SCORE')]
+  columns = [chrome.i18n.getMessage('PRODUCT')]
 
   @property({ type: Array })
   dataArray: KurlyTableData[] = []

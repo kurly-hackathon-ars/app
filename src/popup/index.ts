@@ -34,6 +34,9 @@ export class PopupMain extends LitElement {
   @property({ type: Boolean })
   showRecentProductWindow = true
 
+  @property({ type: Boolean })
+  showPickedItemsWindow = true
+
   // # Event handlers
 
   @eventOptions({})
@@ -68,11 +71,15 @@ export class PopupMain extends LitElement {
   constructor() {
     super()
 
-    chrome.storage.local.get([`showUserWindow`, `showRecentProductWindow`], (result: any) => {
-      const { showUserWindow, showRecentProductWindow } = result
-      this.showUserWindow = showUserWindow
-      this.showRecentProductWindow = showRecentProductWindow
-    })
+    chrome.storage.local.get(
+      [`showUserWindow`, `showRecentProductWindow`, `showPickedItemsWindow`],
+      (result: any) => {
+        const { showUserWindow, showRecentProductWindow, showPickedItemsWindow } = result
+        this.showUserWindow = showUserWindow
+        this.showRecentProductWindow = showRecentProductWindow
+        this.showPickedItemsWindow = showPickedItemsWindow
+      },
+    )
   }
 
   // # watch
@@ -85,6 +92,11 @@ export class PopupMain extends LitElement {
   @watch('showRecentProductWindow', { waitUntilFirstUpdate: true })
   async onWatchshowRecentProductWindow(): Promise<void> {
     chrome.storage.local.set({ showRecentProductWindow: this.showRecentProductWindow })
+  }
+
+  @watch('showPickedItemsWindow', { waitUntilFirstUpdate: true })
+  async onWatchshowPickedItemsWindow(): Promise<void> {
+    chrome.storage.local.set({ showPickedItemsWindow: this.showPickedItemsWindow })
   }
 
   render() {
@@ -118,7 +130,7 @@ export class PopupMain extends LitElement {
             </li>
             <li class="w-full flex">
               <label class="label cursor-pointer">
-                <span class="label-text">최근 본 상품</span>
+                <span class="label-text">${chrome.i18n.getMessage('RECENT_PRODUCT')}</span>
                 <input
                   type="checkbox"
                   class="toggle toggle-accent"
@@ -131,8 +143,15 @@ export class PopupMain extends LitElement {
             </li>
             <li class="w-full flex">
               <label class="label cursor-pointer">
-                <span class="label-text">찜</span>
-                <input type="checkbox" class="toggle toggle-accent" checked />
+                <span class="label-text">${chrome.i18n.getMessage('PICKED_ITEMS')}</span>
+                <input
+                  type="checkbox"
+                  class="toggle toggle-accent"
+                  ?checked=${this.showPickedItemsWindow}
+                  @change=${(event: Event) => {
+                    this.showPickedItemsWindow = (event.target as HTMLInputElement).checked
+                  }}
+                />
               </label>
             </li>
             <li class="w-full flex">

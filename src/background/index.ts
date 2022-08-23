@@ -1,3 +1,5 @@
+import { sleep } from '../content/utils/sleep'
+
 const baseURI = 'https://o88aye9z6i.execute-api.ap-northeast-2.amazonaws.com'
 
 init()
@@ -43,7 +45,7 @@ function addMainPageHandler(): void {
         })
         const resJson = await response.json()
 
-        // TODO: post request to server
+        // 멤버 정보 저장
         chrome.storage.local.set({ userInfo: resJson.userInfo || null })
         fetch(`${baseURI}/member`, {
           method: 'POST',
@@ -55,6 +57,30 @@ function addMainPageHandler(): void {
             name: resJson.userInfo.name,
             grade: resJson.userInfo.grade,
           }),
+        })
+
+        // 찜한 목록 로드
+        fetch('https://api.kurly.com/member/proxy/pick/v1/picks/products?ver=1', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            authorization: authorization,
+          },
+        }).then(async (response) => {
+          const resJson = await response.json()
+          const ids: any[] = resJson.data.map((item: any) => item.no)
+          const idsString = ids.join(`,`)
+
+          const batchResponse = await fetch(
+            `https://8eoluopi8h.execute-api.ap-northeast-2.amazonaws.com/items/batch/${idsString}`,
+            {
+              method: 'GET',
+            },
+          )
+          const batchJson = await batchResponse.json()
+          // FIXME: 원래 Request 받은 이후, 동작하게 해야하는데 시간이 없으므로 생략
+          await sleep(1000)
+          chrome.storage.local.set({ pickedItems: batchJson })
         })
       })
     },
@@ -143,13 +169,14 @@ function addPickedEventHandler(): void {
           String.fromCharCode.apply(null, new Uint8Array(details.requestBody.raw[0].bytes) as any),
         ),
       )
-      chrome.storage.local.get(['userInfo'], async (result: any) => {
+      chrome.storage.local.get(['userInfo', 'authorization'], async (result: any) => {
         const userInfo = result.userInfo
+        const authorization = result.authorization
         const itemId = details.url.split(`/products/`)[1].split(`?`)[0]
         const userId = userInfo.id
 
         if (body.is_pick) {
-          fetch('https://o88aye9z6i.execute-api.ap-northeast-2.amazonaws.com/actions', {
+          await fetch('https://o88aye9z6i.execute-api.ap-northeast-2.amazonaws.com/actions', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -161,6 +188,30 @@ function addPickedEventHandler(): void {
             }),
           })
         }
+
+        // FIXME: 원래 Request 받은 이후, 동작하게 해야하는데 시간이 없으므로 생략
+        await sleep(1000)
+
+        fetch('https://api.kurly.com/member/proxy/pick/v1/picks/products?ver=1', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            authorization: authorization,
+          },
+        }).then(async (response) => {
+          const resJson = await response.json()
+          const ids: any[] = resJson.data.map((item: any) => item.no)
+          const idsString = ids.join(`,`)
+
+          const batchResponse = await fetch(
+            `https://8eoluopi8h.execute-api.ap-northeast-2.amazonaws.com/items/batch/${idsString}`,
+            {
+              method: 'GET',
+            },
+          )
+          const batchJson = await batchResponse.json()
+          chrome.storage.local.set({ pickedItems: batchJson })
+        })
       })
     },
     {
