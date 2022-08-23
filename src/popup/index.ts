@@ -40,6 +40,9 @@ export class PopupMain extends LitElement {
   @property({ type: Boolean })
   showCartItemsWindow = true
 
+  @property({ type: Boolean })
+  enableSearchAPI = true
+
   // # Event handlers
 
   @eventOptions({})
@@ -75,18 +78,26 @@ export class PopupMain extends LitElement {
     super()
 
     chrome.storage.local.get(
-      [`showUserWindow`, `showRecentProductWindow`, `showPickedItemsWindow`, `showCartItemsWindow`],
+      [
+        `showUserWindow`,
+        `showRecentProductWindow`,
+        `showPickedItemsWindow`,
+        `showCartItemsWindow`,
+        `enableSearchAPI`,
+      ],
       (result: any) => {
         const {
           showUserWindow,
           showRecentProductWindow,
           showPickedItemsWindow,
           showCartItemsWindow,
+          enableSearchAPI,
         } = result
         this.showUserWindow = showUserWindow
         this.showRecentProductWindow = showRecentProductWindow
         this.showPickedItemsWindow = showPickedItemsWindow
         this.showCartItemsWindow = showCartItemsWindow
+        this.enableSearchAPI = enableSearchAPI
       },
     )
   }
@@ -111,6 +122,11 @@ export class PopupMain extends LitElement {
   @watch('showCartItemsWindow', { waitUntilFirstUpdate: true })
   async onWatchshowCartItemsWindow(): Promise<void> {
     chrome.storage.local.set({ showCartItemsWindow: this.showCartItemsWindow })
+  }
+
+  @watch('enableSearchAPI', { waitUntilFirstUpdate: true })
+  async onWatchenableSearchAPI(): Promise<void> {
+    chrome.storage.local.set({ enableSearchAPI: this.enableSearchAPI })
   }
 
   render() {
@@ -184,7 +200,7 @@ export class PopupMain extends LitElement {
             <li class="menu-title w-full">
               <span class="flex items-center">
                 <span>${chrome.i18n.getMessage('RECOMMENDED_API')}</span>
-                <!-- <ul class="menu menu-horizontal">
+                <ul class="menu menu-horizontal">
                   <li>
                     <button
                       class="btn btn-xs btn-circle btn-outline p-0"
@@ -193,7 +209,7 @@ export class PopupMain extends LitElement {
                       ${IconPlus}
                     </button>
                   </li>
-                </ul> -->
+                </ul>
               </span>
             </li>
             <li class="w-full flex">
@@ -215,42 +231,23 @@ export class PopupMain extends LitElement {
                   </button>
                 </li>
               </ul> -->
-              <label class="label cursor-pointer">
-                <span class="flex items-center">
-                  <span class="label-text">검색 추천 API</span>
-                </span>
-                <span>
-                  <input type="checkbox" class="toggle toggle-accent" checked />
-                </span>
-              </label>
-            </li>
-            <li class="w-full flex">
-              <!-- <ul class="text-gray-400 p-0 mt-[-0.25rem]">
-                <li class="mb-1">
-                  <button
-                    class="btn btn-xs btn-circle btn-outline p-0"
-                    @click=${this.onClickEditCategory}
-                  >
-                    ${IconEdit}
-                  </button>
-                </li>
-                <li>
-                  <button
-                    class="btn btn-xs btn-circle btn-outline p-0"
-                    @click=${this.onClickDeleteCategory}
-                  >
-                    ${IconMinus}
-                  </button>
-                </li>
-              </ul> -->
-              <label class="label cursor-pointer">
-                <span class="flex items-center">
-                  <span class="label-text">실시간 </span>
-                </span>
-                <span>
-                  <input type="checkbox" class="toggle toggle-accent" checked />
-                </span>
-              </label>
+              <div class="tooltip" data-tip="${chrome.i18n.getMessage('HELP_TEXT_SEARCH_API')}">
+                <label class="label cursor-pointer">
+                  <span class="flex items-center">
+                    <span class="label-text">${chrome.i18n.getMessage('SEARCH_API')}</span>
+                  </span>
+                  <span>
+                    <input
+                      type="checkbox"
+                      class="toggle toggle-accent"
+                      ?checked=${this.enableSearchAPI}
+                      @change=${(event: Event) => {
+                        this.enableSearchAPI = (event.target as HTMLInputElement).checked
+                      }}
+                    />
+                  </span>
+                </label>
+              </div>
             </li>
           </ul>
         </div>

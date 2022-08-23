@@ -168,25 +168,31 @@ function addProductDetailPageHandler(): void {
 function addSearchEventHandler(): void {
   chrome.webRequest.onHeadersReceived.addListener(
     async (details: any) => {
-      if (details.method !== `GET`) return
-      const url = decodeURIComponent(details.url)
-      const keyword = url.match(/keyword=(.*?)&/i)?.[1]
-      if (!keyword) return
-      const response = await fetch(
-        `https://8eoluopi8h.execute-api.ap-northeast-2.amazonaws.com/recommend_by_keyword/`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            keyword: keyword,
-          }),
-        },
-      )
-      const resJson = await response.json()
+      chrome.storage.local.get([`enableSearchAPI`], async (result: any) => {
+        const { enableSearchAPI } = result
 
-      chrome.storage.local.set({ searchText: keyword, searchResult: resJson })
+        if (enableSearchAPI === false) return
+
+        if (details.method !== `GET`) return
+        const url = decodeURIComponent(details.url)
+        const keyword = url.match(/keyword=(.*?)&/i)?.[1]
+        if (!keyword) return
+        const response = await fetch(
+          `https://8eoluopi8h.execute-api.ap-northeast-2.amazonaws.com/recommend_by_keyword/`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              keyword: keyword,
+            }),
+          },
+        )
+        const resJson = await response.json()
+
+        chrome.storage.local.set({ searchText: keyword, searchResult: resJson })
+      })
     },
     { urls: [`https://api.kurly.com/search/v2/normal-search*`] },
     [`responseHeaders`],

@@ -67,5 +67,11 @@
   },
   "RECOMMENDED_API": {
     "message": "추천 API 목록"
+  },
+  "SEARCH_API": {
+    "message": "검색 추천 API"
+  },
+  "HELP_TEXT_SEARCH_API": {
+    "message": "마켓컬리 사이트에서 검색시 개별적인 추천 상품을 표시합니다"
   }
 }
