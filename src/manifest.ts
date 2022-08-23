@@ -23,7 +23,7 @@ export default defineManifest(async (env) => ({
   },
   content_scripts: [
     {
-      run_at: 'document_start',
+      run_at: 'document_end',
       matches: ['https://www.kurly.com/*'],
       js: [
         ...(env.mode === 'development' ? [] : ['public/js/webcomponent.js']),
