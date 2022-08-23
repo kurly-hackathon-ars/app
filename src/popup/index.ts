@@ -37,6 +37,9 @@ export class PopupMain extends LitElement {
   @property({ type: Boolean })
   showPickedItemsWindow = true
 
+  @property({ type: Boolean })
+  showCartItemsWindow = true
+
   // # Event handlers
 
   @eventOptions({})
@@ -72,12 +75,18 @@ export class PopupMain extends LitElement {
     super()
 
     chrome.storage.local.get(
-      [`showUserWindow`, `showRecentProductWindow`, `showPickedItemsWindow`],
+      [`showUserWindow`, `showRecentProductWindow`, `showPickedItemsWindow`, `showCartItemsWindow`],
       (result: any) => {
-        const { showUserWindow, showRecentProductWindow, showPickedItemsWindow } = result
+        const {
+          showUserWindow,
+          showRecentProductWindow,
+          showPickedItemsWindow,
+          showCartItemsWindow,
+        } = result
         this.showUserWindow = showUserWindow
         this.showRecentProductWindow = showRecentProductWindow
         this.showPickedItemsWindow = showPickedItemsWindow
+        this.showCartItemsWindow = showCartItemsWindow
       },
     )
   }
@@ -97,6 +106,11 @@ export class PopupMain extends LitElement {
   @watch('showPickedItemsWindow', { waitUntilFirstUpdate: true })
   async onWatchshowPickedItemsWindow(): Promise<void> {
     chrome.storage.local.set({ showPickedItemsWindow: this.showPickedItemsWindow })
+  }
+
+  @watch('showCartItemsWindow', { waitUntilFirstUpdate: true })
+  async onWatchshowCartItemsWindow(): Promise<void> {
+    chrome.storage.local.set({ showCartItemsWindow: this.showCartItemsWindow })
   }
 
   render() {
@@ -156,8 +170,15 @@ export class PopupMain extends LitElement {
             </li>
             <li class="w-full flex">
               <label class="label cursor-pointer">
-                <span class="label-text">장바구니</span>
-                <input type="checkbox" class="toggle toggle-accent" checked />
+                <span class="label-text">${chrome.i18n.getMessage('CART_ITEMS')}</span>
+                <input
+                  type="checkbox"
+                  class="toggle toggle-accent"
+                  ?checked=${this.showCartItemsWindow}
+                  @change=${(event: Event) => {
+                    this.showCartItemsWindow = (event.target as HTMLInputElement).checked
+                  }}
+                />
               </label>
             </li>
             <li class="w-full flex">

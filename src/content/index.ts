@@ -17,9 +17,11 @@ async function init(): Promise<void> {
   const userInfo = document.createElement('user-info')
   const recentGoodsTable = document.createElement('kurly-table')
   const pickedItemsTable = document.createElement('kurly-table')
+  const cartItemsTable = document.createElement('kurly-table')
 
   await chrome.storage.local.remove('recentProduct')
   await chrome.storage.local.remove('pickedItems')
+  await chrome.storage.local.remove('cartItems')
 
   initWinbox({
     key: 'showUserWindow',
@@ -59,6 +61,22 @@ async function init(): Promise<void> {
         const value = changes.pickedItems.newValue
         pickedItemsTable.dataArray = value
         winbox && winbox.mount(pickedItemsTable)
+      }
+    },
+  })
+  initWinbox({
+    key: 'showCartItemsWindow',
+    title: chrome.i18n.getMessage('CART_ITEMS'),
+    slotElement: cartItemsTable,
+    x: document.body.scrollWidth - 700,
+    y: 650,
+    width: '640px',
+    height: '300px',
+    callbackChangedStorage: (changes: any, winbox: WinBox) => {
+      if ('cartItems' in changes) {
+        const value = changes.cartItems.newValue
+        cartItemsTable.dataArray = value
+        winbox && winbox.mount(cartItemsTable)
       }
     },
   })

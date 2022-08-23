@@ -11,6 +11,7 @@ function init(): void {
   addSearchEventHandler()
   addChangedUrlHandler()
   addPickedEventHandler()
+  addCartEventHandler()
 }
 
 function addBeforeSendHeadersHandler(): void {
@@ -81,6 +82,49 @@ function addMainPageHandler(): void {
           // FIXME: 원래 Request 받은 이후, 동작하게 해야하는데 시간이 없으므로 생략
           await sleep(1000)
           chrome.storage.local.set({ pickedItems: batchJson })
+        })
+
+        // 장바구니 로드
+        fetch('https://api.kurly.com/carts/v1/refresh', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            authorization: authorization,
+          },
+        }).then(async (response) => {
+          const resJson = await response.json()
+          const ids: any[] = resJson.data.cartItems.map((item: any) => item.dealProductNo)
+
+          const detailResponse = await fetch('https://api.kurly.com/carts/v1/detail', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              authorization: authorization,
+            },
+            body: JSON.stringify({
+              address: '',
+              addressDetail: '',
+              cartItems: ids.map((id) => {
+                return { dealProductNo: id, quantity: 1 }
+              }),
+            }),
+          })
+
+          const detailJson = await detailResponse.json()
+          const detailIds: any[] = detailJson.data.dealProducts.map(
+            (item: any) => item.contentsProductNo,
+          )
+
+          const batchResponse = await fetch(
+            `https://8eoluopi8h.execute-api.ap-northeast-2.amazonaws.com/items/batch/${detailIds}`,
+            {
+              method: 'GET',
+            },
+          )
+          const batchJson = await batchResponse.json()
+          // FIXME: 원래 Request 받은 이후, 동작하게 해야하는데 시간이 없으므로 생략
+          await sleep(1000)
+          chrome.storage.local.set({ cartItems: batchJson })
         })
       })
     },
@@ -216,6 +260,87 @@ function addPickedEventHandler(): void {
     },
     {
       urls: ['https://api.kurly.com/member/proxy/pick/v1/picks/products/*'],
+    },
+    ['requestBody'],
+  )
+}
+
+function addCartEventHandler(): void {
+  chrome.webRequest.onBeforeRequest.addListener(
+    function (details: any) {
+      if (details.method !== `POST`) return
+
+      const body = JSON.parse(
+        decodeURIComponent(
+          String.fromCharCode.apply(null, new Uint8Array(details.requestBody.raw[0].bytes) as any),
+        ),
+      )
+      chrome.storage.local.get(['userInfo', 'authorization'], async (result: any) => {
+        const userInfo = result.userInfo
+        const authorization = result.authorization
+        const itemId = body.cartItems[0].dealProductNo
+        const userId = userInfo.id
+
+        if (body.is_pick) {
+          await fetch('https://o88aye9z6i.execute-api.ap-northeast-2.amazonaws.com/actions', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              member_id: userId,
+              product_id: Number(itemId),
+              action_type: 4,
+            }),
+          })
+        }
+
+        // FIXME: 원래 Request 받은 이후, 동작하게 해야하는데 시간이 없으므로 생략
+        await sleep(1000)
+
+        fetch('https://api.kurly.com/carts/v1/refresh', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            authorization: authorization,
+          },
+        }).then(async (response) => {
+          const resJson = await response.json()
+          const ids: any[] = resJson.data.cartItems.map((item: any) => item.dealProductNo)
+
+          const detailResponse = await fetch('https://api.kurly.com/carts/v1/detail', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              authorization: authorization,
+            },
+            body: JSON.stringify({
+              address: '',
+              addressDetail: '',
+              cartItems: ids.map((id) => {
+                return { dealProductNo: id, quantity: 1 }
+              }),
+            }),
+          })
+
+          const detailJson = await detailResponse.json()
+          const detailIds: any[] = detailJson.data.dealProducts.map(
+            (item: any) => item.contentsProductNo,
+          )
+
+          const batchResponse = await fetch(
+            `https://8eoluopi8h.execute-api.ap-northeast-2.amazonaws.com/items/batch/${detailIds}`,
+            {
+              method: 'GET',
+            },
+          )
+          const batchJson = await batchResponse.json()
+          chrome.storage.local.set({ cartItems: batchJson })
+        })
+      })
+    },
+    {
+      urls: ['https://api.kurly.com/carts/v1/add'],
     },
     ['requestBody'],
   )

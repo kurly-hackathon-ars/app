@@ -61,5 +61,8 @@
   },
   "PICKED_ITEMS": {
     "message": "찜한 상품"
+  },
+  "CART_ITEMS": {
+    "message": "장바구니 상품"
   }
 }
