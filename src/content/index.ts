@@ -8,12 +8,16 @@ import './index.css'
 import './components/card/card'
 import './components/card-group/card-group'
 import { html, render } from 'lit-html'
+import { equals } from './utils/equal'
 
 init()
 
-function init(): void {
+async function init(): Promise<void> {
   const userInfo = document.createElement('user-info')
-  const table = document.createElement('kurly-table')
+  const recentGoodsTable = document.createElement('kurly-table')
+  recentGoodsTable.columns = [chrome.i18n.getMessage('PRODUCT')]
+
+  await chrome.storage.local.remove('recentProduct')
 
   initWinbox({
     key: 'showUserWindow',
@@ -26,15 +30,23 @@ function init(): void {
   })
   initWinbox({
     key: 'showRecentProductWindow',
-    title: '테스트',
-    slotElement: table,
+    title: chrome.i18n.getMessage('RECENT_PRODUCT'),
+    slotElement: recentGoodsTable,
     x: document.body.scrollWidth - 700,
     y: 50,
     width: '640px',
     height: '300px',
+    callbackChangedStorage: (changes: any, winbox: WinBox) => {
+      if ('recentProduct' in changes) {
+        const value = changes.recentProduct.newValue
+        recentGoodsTable.dataArray = value
+        winbox && winbox.mount(recentGoodsTable)
+      }
+    },
   })
 
   addSearchEventHandler()
+  addChangedUrlHandler()
 }
 
 function initWinbox({
@@ -45,6 +57,7 @@ function initWinbox({
   y,
   width,
   height,
+  callbackChangedStorage,
 }: {
   key: string
   title: string
@@ -53,6 +66,7 @@ function initWinbox({
   y: number
   width: string
   height: string
+  callbackChangedStorage?: Function
 }): void {
   let winbox: WinBox | null = null
   const table = slotElement
@@ -81,9 +95,9 @@ function initWinbox({
   })
 
   chrome.storage.onChanged.addListener((changes: any, area: 'local' | 'sync') => {
+    callbackChangedStorage && callbackChangedStorage(changes, winbox)
     if (area === 'local' && changes[key]) {
       const storageValue = changes[key]?.newValue
-
       if (storageValue === true) {
         if (winbox !== null) {
           winbox.show()
@@ -143,6 +157,46 @@ function addSearchEventHandler(): void {
 
 async function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
+async function addChangedUrlHandler(): Promise<void> {
+  let previousGoodsRecent: any[] = []
+
+  saveRecentProduct({
+    skipCompareEqual: true,
+  })
+
+  chrome.storage.onChanged.addListener(async (changes: any, area: 'local' | 'sync') => {
+    if (area === 'local' && 'onChangedUrl' in changes) {
+      saveRecentProduct()
+    }
+  })
+
+  async function saveRecentProduct({ skipCompareEqual = false } = {}): Promise<void> {
+    if (!window.localStorage) return
+
+    const goodsRecentString = localStorage.getItem('goodsRecent')
+
+    if (!goodsRecentString) return
+
+    const goodsRecent: any[] = JSON.parse(goodsRecentString)
+
+    if (skipCompareEqual === false && equals(previousGoodsRecent, goodsRecent)) return
+
+    previousGoodsRecent = goodsRecent
+
+    const ids = goodsRecent.map((item) => item.no)
+    const idsString = ids.join(`,`)
+
+    const response = await fetch(
+      `https://8eoluopi8h.execute-api.ap-northeast-2.amazonaws.com/items/batch/${idsString}`,
+      {
+        method: 'GET',
+      },
+    )
+    const resJson = await response.json()
+    chrome.storage.local.set({ recentProduct: resJson })
+  }
 }
 
 export {}

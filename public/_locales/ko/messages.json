@@ -55,5 +55,8 @@
   },
   "RECOMMEND_PRODUCT": {
     "message": "상품 추천 결과"
+  },
+  "RECENT_PRODUCT": {
+    "message": "최근 본 상품"
   }
 }

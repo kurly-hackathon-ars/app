@@ -1,4 +1,4 @@
-const baseURI = 'http://3.34.222.139:8080'
+const baseURI = 'https://o88aye9z6i.execute-api.ap-northeast-2.amazonaws.com'
 
 init()
 
@@ -7,6 +7,7 @@ function init(): void {
   addMainPageHandler()
   addProductDetailPageHandler()
   addSearchEventHandler()
+  addChangedUrlHandler()
 }
 
 function addBeforeSendHeadersHandler(): void {
@@ -72,7 +73,7 @@ function addProductDetailPageHandler(): void {
         if (userInfo === null) return
         const userId = userInfo.id
 
-        fetch('http://3.37.151.144:8000/activities', {
+        fetch('https://o88aye9z6i.execute-api.ap-northeast-2.amazonaws.com/activities', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -97,12 +98,36 @@ function addSearchEventHandler(): void {
       const url = decodeURIComponent(details.url)
       const keyword = url.match(/keyword=(.*?)&/i)?.[1]
       if (!keyword) return
-      const response = await fetch(`http://3.37.151.144:8000/recommend_by_keyword/${keyword}`)
+      const response = await fetch(
+        `https://8eoluopi8h.execute-api.ap-northeast-2.amazonaws.com/recommend_by_keyword/`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            keyword: keyword,
+          }),
+        },
+      )
       const resJson = await response.json()
 
       chrome.storage.local.set({ searchText: keyword, searchResult: resJson })
     },
     { urls: [`https://api.kurly.com/search/v2/normal-search*`] },
+    [`responseHeaders`],
+  )
+}
+
+function addChangedUrlHandler(): void {
+  chrome.webRequest.onHeadersReceived.addListener(
+    async (_details: any) => {
+      chrome.storage.local.get([`onChangedUrl`], (result: any) => {
+        const { onChangedUrl } = result
+        chrome.storage.local.set({ onChangedUrl: !onChangedUrl })
+      })
+    },
+    { urls: [`https://www.kurly.com/*`] },
     [`responseHeaders`],
   )
 }
