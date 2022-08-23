@@ -66,7 +66,9 @@ function addProductDetailPageHandler(): void {
     (details: any) => {
       chrome.storage.local.get(['userInfo'], async (result: any) => {
         const userInfo = result.userInfo
-        const itemId = details.url.split('/goods/')[1].split(`?`)[0]
+        const itemId = details.url.includes('.json')
+          ? details.url.split('/goods/')[1].split(`.json`)[0]
+          : details.url.split('/goods/')[1].split(`?`)[0]
         if (userInfo === null) return
         const userId = userInfo.id
 
