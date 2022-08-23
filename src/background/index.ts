@@ -63,10 +63,27 @@ function addMainPageHandler(): void {
 
 function addProductDetailPageHandler(): void {
   chrome.webRequest.onHeadersReceived.addListener(
-    (_details: any) => {
-      console.log(_details)
+    (details: any) => {
+      chrome.storage.local.get(['userInfo'], async (result: any) => {
+        const userInfo = result.userInfo
+        const itemId = details.url.split('/goods/')[1].split(`?`)[0]
+        if (userInfo === null) return
+        const userId = userInfo.id
+
+        fetch('http://3.37.151.144:8000/activities', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            user_id: userId,
+            item_id: Number(itemId),
+            activity_type: 2,
+          }),
+        })
+      })
     },
-    { urls: [`https://www.kurly.com/goods/*`] },
+    { urls: [`https://www.kurly.com/goods/*`, `https://www.kurly.com/_next/data/**/goods/*`] },
     [`responseHeaders`],
   )
 }
@@ -78,9 +95,7 @@ function addSearchEventHandler(): void {
       const url = decodeURIComponent(details.url)
       const keyword = url.match(/keyword=(.*?)&/i)?.[1]
       if (!keyword) return
-      const response = await fetch(
-        `http://3.37.151.144:8000/recommend_by_keyword/${encodeURIComponent(keyword)}`,
-      )
+      const response = await fetch(`http://3.37.151.144:8000/recommend_by_keyword/${keyword}`)
       const resJson = await response.json()
 
       chrome.storage.local.set({ searchText: keyword, searchResult: resJson })
