@@ -52,5 +52,8 @@
   },
   "REQUIRED_LOGIN": {
     "message": "로그인이 필요합니다."
+  },
+  "RECOMMEND_PRODUCT": {
+    "message": "상품 추천 결과"
   }
 }

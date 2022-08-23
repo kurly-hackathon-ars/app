@@ -6,6 +6,7 @@ function init(): void {
   addBeforeSendHeadersHandler()
   addMainPageHandler()
   addProductDetailPageHandler()
+  addSearchEventHandler()
 }
 
 function addBeforeSendHeadersHandler(): void {
@@ -66,7 +67,26 @@ function addProductDetailPageHandler(): void {
       console.log(_details)
     },
     { urls: [`https://www.kurly.com/goods/*`] },
-    [`responseHeaders`, `extraHeaders`],
+    [`responseHeaders`],
+  )
+}
+
+function addSearchEventHandler(): void {
+  chrome.webRequest.onHeadersReceived.addListener(
+    async (details: any) => {
+      if (details.method !== `GET`) return
+      const url = decodeURIComponent(details.url)
+      const keyword = url.match(/keyword=(.*?)&/i)?.[1]
+      if (!keyword) return
+      const response = await fetch(
+        `http://3.37.151.144:8000/recommend_by_keyword/${encodeURIComponent(keyword)}`,
+      )
+      const resJson = await response.json()
+
+      chrome.storage.local.set({ searchText: keyword, searchResult: resJson })
+    },
+    { urls: [`https://api.kurly.com/search/v2/normal-search*`] },
+    [`responseHeaders`],
   )
 }
 
