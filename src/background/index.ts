@@ -73,15 +73,15 @@ function addProductDetailPageHandler(): void {
         if (userInfo === null) return
         const userId = userInfo.id
 
-        fetch('https://o88aye9z6i.execute-api.ap-northeast-2.amazonaws.com/activities', {
+        fetch('https://o88aye9z6i.execute-api.ap-northeast-2.amazonaws.com/actions', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            user_id: userId,
-            item_id: Number(itemId),
-            activity_type: 2,
+            member_id: userId,
+            product_id: Number(itemId),
+            action_type: 2,
           }),
         })
       })
