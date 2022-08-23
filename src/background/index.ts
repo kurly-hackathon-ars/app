@@ -8,6 +8,7 @@ function init(): void {
   addProductDetailPageHandler()
   addSearchEventHandler()
   addChangedUrlHandler()
+  addPickedEventHandler()
 }
 
 function addBeforeSendHeadersHandler(): void {
@@ -129,6 +130,43 @@ function addChangedUrlHandler(): void {
     },
     { urls: [`https://www.kurly.com/*`] },
     [`responseHeaders`],
+  )
+}
+
+function addPickedEventHandler(): void {
+  chrome.webRequest.onBeforeRequest.addListener(
+    function (details: any) {
+      if (details.method !== `PUT`) return
+
+      const body = JSON.parse(
+        decodeURIComponent(
+          String.fromCharCode.apply(null, new Uint8Array(details.requestBody.raw[0].bytes) as any),
+        ),
+      )
+      chrome.storage.local.get(['userInfo'], async (result: any) => {
+        const userInfo = result.userInfo
+        const itemId = details.url.split(`/products/`)[1].split(`?`)[0]
+        const userId = userInfo.id
+
+        if (body.is_pick) {
+          fetch('https://o88aye9z6i.execute-api.ap-northeast-2.amazonaws.com/actions', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              member_id: userId,
+              product_id: Number(itemId),
+              action_type: 3,
+            }),
+          })
+        }
+      })
+    },
+    {
+      urls: ['https://api.kurly.com/member/proxy/pick/v1/picks/products/*'],
+    },
+    ['requestBody'],
   )
 }
 
